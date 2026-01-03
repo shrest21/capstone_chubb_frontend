@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class RegisterService {
+export class LoginService {
   private API_URL ='http://localhost:8085/auth/login';
   constructor(private http: HttpClient) { }
   loginUser(payload:any):Observable<any>{
