@@ -1,0 +1,85 @@
+/* Page background */
+html {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+}
+
+/* Center container (same as register) */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 100px; /* below fixed navbar */
+}
+
+/* Card */
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 32px;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #e65100;
+}
+
+/* Labels */
+label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ff9800;
+}
+
+/* Button */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f57c00;
+}
+.link {
+  margin-top: 10px;
+  text-align: right;         
+  color: #555;
+}
+.link a {
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}

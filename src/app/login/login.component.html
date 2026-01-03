@@ -1,8 +1,16 @@
-<h1>Welcome to Login Page</h1>
-<form (ngSubmit)="login()">
-    <label>Enter Email: </label>
-    <input type="text" [(ngModel)]="email" name="email" required><br>
-    <label>Enter Password: </label>
-    <input type="text" [(ngModel)]="password" name="password" required><br>
+<div class="login-container">
+  <form (ngSubmit)="login()">
+    <h1>Login</h1>
+
+    <label>Enter Email:</label>
+    <input type="text" [(ngModel)]="email" name="email" required>
+
+    <label>Enter Password:</label>
+    <input type="text" [(ngModel)]="password" name="password" required>
+
     <button type="submit">Submit</button>
-</form>
+    <div class="link">
+    New Here? <a href="/register">Signup Here</a>
+    </div>
+  </form>
+</div>
