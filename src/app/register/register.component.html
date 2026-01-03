@@ -1,4 +1,7 @@
-<h1>Welcome to Register Page</h1>
+<html>
+    <body>
+        <h1>Welcome to Register Page</h1>
+<div class="register-container">
 <form (ngSubmit)="register()">
     <label>Enter Name: </label>
     <input type="text" [(ngModel)]="name" name="name" required><br>
@@ -8,3 +11,6 @@
     <input type="text" [(ngModel)]="password" name="password" required><br>
     <button type="submit">Submit</button>
 </form>
+</div>
+</body>
+</html>
