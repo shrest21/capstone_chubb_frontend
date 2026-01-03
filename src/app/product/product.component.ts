@@ -12,6 +12,13 @@ import { ProductService } from '../_services/product.service';
 export class ProductComponent implements OnInit{
   constructor(private productService:ProductService){}
    products: any[] = [];
+   productImages: { [key: string]: string } = {
+    'MacBook Air M3': 'assets/Images/macbook.png',
+    'iPhone 17 Pro': 'assets/Images/iphone17.png',
+    'iPhone 11 Pro': 'assets/Images/iphone11.png',
+    'iPhone 10 Pro': 'assets/Images/iphone10.png',
+    'iPhone 9 Pro': 'assets/Images/iphone9.png'
+  };
    ngOnInit(): void {
     this.loadProducts();
   }
@@ -21,4 +28,7 @@ export class ProductComponent implements OnInit{
         this.products = data;},
       error: (err) => {console.error(err);}});
   }
+  getImage(productName: string): string {
+  return this.productImages[productName] ;
+}
 }

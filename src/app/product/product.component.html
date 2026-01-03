@@ -2,6 +2,7 @@
 
 <div class="products-container">
   <div class="product-card" *ngFor="let product of products">
+    <img [src]="getImage(product.name)" alt="{{ product.name }}" class="product-image"/>
     <h3>{{ product.name }}</h3>
     <p>{{ product.description }}</p>
     <p><strong>Brand:</strong> {{ product.brand }}</p>
