@@ -1,0 +1,20 @@
+<div class="cart">
+  <h2>Your Cart</h2>
+
+  <p *ngIf="cartItems.length === 0">
+    Your cart is empty!!
+  </p>
+
+  <div *ngIf="cartItems.length > 0">
+    <div *ngFor="let item of cartItems" class="item">
+        <p class="left"><b>{{ item.name }}</b></p>
+        <p class="right">Qty: {{ item.quantity }}</p>
+        <p>₹ {{ item.total }}</p>
+        <hr>
+    </div>
+    <p class="total-left">Total:</p>
+<p class="total-right">₹ {{ getGrandTotal() }}</p>
+
+    <button>Checkout</button>
+  </div>
+</div>

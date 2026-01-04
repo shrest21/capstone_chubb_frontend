@@ -1,0 +1,53 @@
+.cart {
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white; 
+}
+
+h2 {
+  text-align: center;
+  color: orange;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 8px;
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.left {
+  display: inline-block;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.item p {
+  margin: 2px 0;
+}
+.total-left {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.total-right {
+  font-weight: bold;
+  float: right;
+}
