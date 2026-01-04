@@ -15,50 +15,56 @@ html, body {
   background-color: #ff9800;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   z-index: 1000;
-  padding: 0;
-}
-
-/* INNER CONTAINER */
-.nav-container {
-  width: 100%;
-  max-width: 100%;
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
   box-sizing: border-box;
 }
 
-/* LEFT GROUP */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-shrink: 0;
-}
-
-/* LOGO */
-.logo {
+/* LOGO/BRAND */
+.navbar-brand {
   font-size: 20px;
   font-weight: bold;
   color: white;
+  text-decoration: none;
   white-space: nowrap;
-  margin-right: 8px;
+  margin-right: 24px;
 }
 
-/* RIGHT GROUP */
-.nav-right {
+.navbar-brand:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+/* NAVBAR NAV (UL) */
+.navbar-nav {
   display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
+  gap: 4px;
+}
+
+/* LEFT SIDE AUTO MARGIN */
+.navbar-nav.mr-auto {
+  margin-right: auto;
+}
+
+/* RIGHT SIDE AUTO MARGIN */
+.navbar-nav.ml-auto {
   margin-left: auto;
 }
 
-/* LINKS */
-.nav-left a,
-.nav-right a {
+/* NAV ITEMS (LI) */
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+/* NAV LINKS */
+.nav-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -66,44 +72,46 @@ html, body {
   padding: 8px 12px;
   display: inline-block;
   transition: opacity 0.2s ease;
+  cursor: pointer;
 }
 
 /* HOVER */
-.nav-left a:hover,
-.nav-right a:hover {
+.nav-link:hover {
   opacity: 0.85;
 }
 
 /* ACTIVE ROUTE */
-a.active {
+.nav-link.active,
+.navbar-nav[routerLinkActive="active"] .nav-item a.active {
   border-bottom: 2px solid white;
   padding-bottom: 6px;
 }
 
 /* PAGE OFFSET */
-.page-content {
+.page-content,
+.container {
   margin-top: 80px;
   padding: 20px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .nav-container {
+  .navbar {
     padding: 12px 16px;
+    flex-wrap: wrap;
   }
   
-  .nav-left,
-  .nav-right {
-    gap: 12px;
+  .navbar-nav {
+    gap: 2px;
   }
   
-  .nav-left a,
-  .nav-right a {
+  .nav-link {
     padding: 8px 8px;
     font-size: 14px;
   }
   
-  .logo {
+  .navbar-brand {
     font-size: 18px;
+    margin-right: 12px;
   }
 }
