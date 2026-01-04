@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../_services/login.service';
+import {Router} from '@angular/router';
+import { StorageService } from '../_services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { LoginService } from '../_services/login.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor(private loginService:LoginService){}
+  constructor(private loginService:LoginService,private router: Router,private storageService: StorageService,){}
   email='';
   password='';
   login(){
@@ -20,8 +22,11 @@ export class LoginComponent {
       password:this.password
     };
     this.loginService.loginUser(payload).subscribe({
-      next:(response)=>{console.log(response);},
-      error:(error)=>{console.error(error);}
+      next:(response)=>{console.log("Login Success: ",response);
+        this.storageService.saveUser(response);
+        window.location.href = '/products';
+      },
+      error:(error)=>{console.error("Login failed: ",error);}
     });
   }
 }
