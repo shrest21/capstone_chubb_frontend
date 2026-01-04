@@ -1,0 +1,16 @@
+<div class="orders-container">
+  <h1>My Orders</h1>
+
+  <div *ngIf="orders.length === 0">
+    No orders found.
+  </div>
+
+  <div class="orders-list">
+    <div class="order-card" *ngFor="let order of orders">
+      <p><strong>Order ID:</strong> {{ order.orderId }}</p>
+      <p><strong>Status:</strong> {{ order.status }}</p>
+      <p><strong>Total Amount:</strong> ₹ {{ order.totalAmount }}</p>
+      <p><strong>Date Placed:</strong> {{ order.createdAt | date:'medium' }}</p>
+    </div>
+  </div>
+</div>
