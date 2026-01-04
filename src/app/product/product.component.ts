@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../_services/product.service';
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -10,7 +11,7 @@ import { ProductService } from '../_services/product.service';
   styleUrl: './product.component.css'
 })
 export class ProductComponent implements OnInit{
-  constructor(private productService:ProductService){}
+  constructor(private productService:ProductService,private cartService: CartService){}
    products: any[] = [];
    productImages: { [key: string]: string } = {
     'MacBook Air M3': 'assets/Images/macbook.png',
@@ -28,7 +29,11 @@ export class ProductComponent implements OnInit{
         this.products = data;},
       error: (err) => {console.error(err);}});
   }
-  getImage(productName: string): string {
-  return this.productImages[productName] ;
-}
+  getImage(productName: string): string 
+  {
+    return this.productImages[productName] ;
+  }
+  addToCart(productId: number) {
+    this.cartService.addToCart(productId);
+  }
 }
