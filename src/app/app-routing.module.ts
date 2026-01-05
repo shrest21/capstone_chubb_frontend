@@ -8,6 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewordersComponent } from './vieworders/vieworders.component';
 import { OrderComponent } from './order/order.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/products', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'cart',component:CartComponent},
   {path:'profile',component:ProfileComponent},
   {path:'vieworders',component:ViewordersComponent},
-  {path:'order',component:OrderComponent}
+  {path:'order',component:OrderComponent},
+  {path:'addproduct',component:AddproductComponent}
 ];
 
 @NgModule({
