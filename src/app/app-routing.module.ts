@@ -10,9 +10,9 @@ import { ViewordersComponent } from './vieworders/vieworders.component';
 import { OrderComponent } from './order/order.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { EditproductComponent } from './editproduct/editproduct.component';
+import { CreatewarehouseComponent } from './createwarehouse/createwarehouse.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/products', pathMatch: 'full' },
   {path:'register',component: RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'products',component:ProductComponent},
@@ -21,7 +21,9 @@ const routes: Routes = [
   {path:'vieworders',component:ViewordersComponent},
   {path:'order',component:OrderComponent},
   {path:'addproduct',component:AddproductComponent},
-  {path:'editproduct/:id',component:EditproductComponent}
+  {path:'editproduct/:id',component:EditproductComponent},
+  {path:'createwarehouse',component:CreatewarehouseComponent},
+  { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
 
 @NgModule({

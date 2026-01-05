@@ -4,6 +4,7 @@ import { ProductService } from '../_services/product.service';
 import { EditproductService } from '../_services/editproduct.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { StorageService } from '../_services/storage.service';
 
 @Component({
   selector: 'app-editproduct',
@@ -25,11 +26,18 @@ export class EditproductComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductService,
     private editproductService: EditproductService,
-    private router: Router
+    private router: Router,
+    private storageService:StorageService
   ) {}
 
   ngOnInit(): void {
     this.productId = Number(this.route.snapshot.paramMap.get('id'));
+    const user=this.storageService.getUser();
+    if(user.role=="ROLE_ADMIN")
+    {
+      alert("Please login as Admin.");
+      this.router.navigate(['/profile']);
+    }
 
     this.productService.getProductById(this.productId).subscribe({
       next: (data:any) => {

@@ -1,0 +1,47 @@
+.warehouse {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.warehouse form {
+  background-color: #ffffff;
+  padding: 24px;
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.warehouse h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e65100;
+}
+.warehouse label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.warehouse input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.warehouse input:focus {
+  outline: none;
+  border-color: orange;
+}
+.warehouse button {
+  width: 100%;
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.warehouse button:hover {
+  background-color: orangered;
+}
