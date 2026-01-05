@@ -1,1 +1,18 @@
-<p>order works!</p>
+<h1>Your Order</h1>
+<form class="order-card">
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="name" name="name" required>
+  <label>Address:</label>
+  <input type="text" [(ngModel)]="address" name="address" required>
+  <h3>Products</h3>
+  <div class="item-row" *ngFor="let item of cartItems">
+    <span>{{ item.name }} x {{ item.quantity }}</span>
+    <span>₹ {{ item.price * item.quantity }}</span>
+  </div>
+  <hr>
+  <div class="item-row total-row">
+    <strong>Total:</strong>
+    <strong>₹ {{ getGrandTotal() }}</strong>
+  </div>
+  <button type="button" (click)="placeOrder()">Pay Now</button>
+</form>

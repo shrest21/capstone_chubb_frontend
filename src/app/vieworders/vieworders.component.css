@@ -20,7 +20,7 @@ h1 {
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  max-width: 500px; /* keeps cards neat */
+  max-width: 500px;
 }
 .order-card p {
   margin: 6px 0;
