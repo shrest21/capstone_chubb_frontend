@@ -1,9 +1,9 @@
 <div class="warehouse-page">
   <h1>Warehouses</h1>
   <div class="warehouse-grid">
-    <div class="warehouse-card" *ngFor="let warehouse of warehouses">
+    <a class="warehouse-card link-card" *ngFor="let warehouse of warehouses" [routerLink]="['/warehouses', warehouse.code]">
       <h3>{{ warehouse.code }}</h3>
       <p class="location">{{ warehouse.location }}</p>
-    </div>
+    </a>
   </div>
 </div>

@@ -1,1 +1,18 @@
-<p>warehousestock works!</p>
+<div class="stock-page">
+  <h2>Warehouse Stock</h2>
+
+  <p class="warehouse-code">
+    Warehouse: <strong>{{ warehouseCode }}</strong>
+  </p>
+
+  <div *ngIf="stockItems.length === 0" class="empty">
+    No stock available
+  </div>
+
+  <div class="stock-grid">
+    <div class="stock-card" *ngFor="let item of stockItems">
+      <h3>{{ item.productName }}</h3>
+      <p class="quantity">Quantity: {{ item.quantity }}</p>
+    </div>
+  </div>
+</div>

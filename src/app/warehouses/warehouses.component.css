@@ -32,3 +32,9 @@
   font-size: 14px;
   color: #7f8c8d;
 }
+.link-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
