@@ -1,0 +1,32 @@
+.stock-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.stock-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stock-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.stock-card h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.quantity {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #27ae60;
+}

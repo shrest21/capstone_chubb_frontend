@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit{
   constructor(private productService:ProductService,private cartService: CartService,private storageService:StorageService,private router:Router,private editProductService:EditproductService){}
    products: any[] = [];
    isAdmin = false;
+   isWarehouseManager = false;
    productImages: { [key: string]: string } = {
     'MacBook Air M3': 'assets/Images/macbook.png',
     'iPhone 17 Pro': 'assets/Images/iphone17.png',
@@ -29,6 +30,9 @@ export class ProductComponent implements OnInit{
     const user = this.storageService.getUser();
     if(user.role=="ROLE_ADMIN")
       this.isAdmin=true;
+    if (user.role === 'ROLE_WAREHOUSE_MANAGER') {
+    this.isWarehouseManager = true;
+  }
   }
   loadProducts() {
     this.productService.getProducts().subscribe({
@@ -45,6 +49,9 @@ export class ProductComponent implements OnInit{
   }
   editProduct(productId: number) {
     this.router.navigate(['/editproduct', productId]);
+  }
+  seeStock(productId:number){
+    this.router.navigate(['/productstock', productId]);
   }
   deleteProduct(productId: number) {
     if (confirm('Are you sure you want to delete this product?')) {

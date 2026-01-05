@@ -14,4 +14,7 @@ export class WarehousestockService {
   updateWarehouseStock(code: string, payload: any): Observable<any> {
     return this.http.post(`${this.API_URL}/${code}`, payload,{withCredentials:true});
   }
+  stockbyproductId(code:number):Observable<any>{
+    return this.http.get(`http://localhost:8085/inventory/stock/${code}`,{withCredentials:true});
+  }
 }

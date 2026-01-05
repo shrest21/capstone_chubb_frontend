@@ -1,0 +1,11 @@
+<h2>Product Stock</h2>
+<div class="stock-cards">
+  <div class="stock-card" *ngFor="let stock of stockList">
+    <h3>{{ stock.warehouseCode }}</h3>
+    <p class="quantity">Quantity: {{ stock.quantity }}</p>
+  </div>
+</div>
+
+<div *ngIf="stockList.length === 0">
+  No stock available
+</div>
