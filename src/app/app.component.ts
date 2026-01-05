@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
-  showModeratorBoard = false;
+  showWarehouseBoard = false;
   username?: string;
 
   constructor(
@@ -29,8 +29,7 @@ export class AppComponent implements OnInit {
       this.roles = user.role || [];
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
+      this.showWarehouseBoard = this.roles.includes('ROLE_WAREHOUSE_MANAGER');
       this.username = user.name || user.email;
     }
   }

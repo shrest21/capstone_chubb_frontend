@@ -11,6 +11,7 @@ import { OrderComponent } from './order/order.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { EditproductComponent } from './editproduct/editproduct.component';
 import { CreatewarehouseComponent } from './createwarehouse/createwarehouse.component';
+import { WarehousesComponent } from './warehouses/warehouses.component';
 
 const routes: Routes = [
   {path:'register',component: RegisterComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'addproduct',component:AddproductComponent},
   {path:'editproduct/:id',component:EditproductComponent},
   {path:'createwarehouse',component:CreatewarehouseComponent},
+  {path:'warehouses',component:WarehousesComponent},
   { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
 
