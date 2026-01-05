@@ -1,0 +1,47 @@
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-container form {
+  background-color: #ffffff;
+  padding: 24px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.product-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.product-container label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.product-container input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.product-container input:focus {
+  outline: none;
+  border-color: orange;
+}
+.product-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.product-container button:hover {
+  background-color: orangered;
+}

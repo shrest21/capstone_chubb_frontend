@@ -23,6 +23,11 @@
     </ul>
   } @else {
     <ul class="navbar-nav ml-auto">
+      @if (showAdminBoard) {
+        <li class="nav-item">
+        <a routerLink="/addproduct" routerLinkActive="active" class="nav-link">Add Product</a>
+      </li>
+      }
       <li class="nav-item">
         <a routerLink="/cart" routerLinkActive="active" class="nav-link">Cart</a>
       </li>

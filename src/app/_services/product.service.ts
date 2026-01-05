@@ -11,4 +11,7 @@ export class ProductService {
   getProducts():Observable<any[]>{
     return this.http.get<any[]>(this.API_URL);
   }
+  getProductById(id: number) {
+    return this.http.get(`http://localhost:8085/products/${id}`);
+  }
 }

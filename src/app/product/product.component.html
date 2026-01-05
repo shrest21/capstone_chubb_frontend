@@ -10,6 +10,10 @@
     <div class="buttons">
     <button (click)="addToCart(product.id)">Add to Cart</button>
     <button >Buy Now</button>
+    <div class="buttons" *ngIf="isAdmin">
+      <button (click)="editProduct(product.id)">Edit Product</button>
+      <button (click)="deleteProduct(product.id)">Delete Product</button>
+    </div>
     </div>
   </div>
 </div>

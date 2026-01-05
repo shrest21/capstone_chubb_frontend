@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ViewordersComponent } from './vieworders/vieworders.component';
 import { OrderComponent } from './order/order.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { EditproductComponent } from './editproduct/editproduct.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/products', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'vieworders',component:ViewordersComponent},
   {path:'order',component:OrderComponent},
-  {path:'addproduct',component:AddproductComponent}
+  {path:'addproduct',component:AddproductComponent},
+  {path:'editproduct/:id',component:EditproductComponent}
 ];
 
 @NgModule({
