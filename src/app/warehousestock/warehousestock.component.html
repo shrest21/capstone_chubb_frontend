@@ -1,18 +1,26 @@
 <div class="stock-page">
   <h2>Warehouse Stock</h2>
-
   <p class="warehouse-code">
     Warehouse: <strong>{{ warehouseCode }}</strong>
   </p>
-
-  <div *ngIf="stockItems.length === 0" class="empty">
-    No stock available
-  </div>
-
-  <div class="stock-grid">
-    <div class="stock-card" *ngFor="let item of stockItems">
-      <h3>{{ item.productName }}</h3>
-      <p class="quantity">Quantity: {{ item.quantity }}</p>
+  <div class="content">
+    <div>
+      <p *ngIf="stockItems.length === 0">No stock available</p>
+      <div class="stock-grid">
+        <div class="stock-card" *ngFor="let item of stockItems">
+          <h3>{{ item.productName }}</h3>
+          <p>Product Id: {{ item.productId }}</p>
+          <p class="quantity">Quantity: {{ item.quantity }}</p>
+        </div>
+      </div>
     </div>
+    <form class="form-section" (ngSubmit)="updateWarehouse()">
+      <h3>Update Warehouse</h3>
+      <label>Product ID</label>
+      <input type="number" name="productId" [(ngModel)]="productId" required>
+      <label>Quantity</label>
+      <input type="number" name="quantity" [(ngModel)]="quantity" required>
+      <button type="submit">Update Warehouse</button>
+    </form>
   </div>
 </div>

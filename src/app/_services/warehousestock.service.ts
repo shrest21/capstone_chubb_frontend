@@ -11,4 +11,7 @@ export class WarehousestockService {
   getWarehouseStock(code: string): Observable<any> {
     return this.http.get(`${this.API_URL}/${code}`,{withCredentials:true});
   }
+  updateWarehouseStock(code: string, payload: any): Observable<any> {
+    return this.http.post(`${this.API_URL}/${code}`, payload,{withCredentials:true});
+  }
 }
