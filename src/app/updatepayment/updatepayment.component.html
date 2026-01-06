@@ -1,12 +1,12 @@
-<form (ngSubmit)="update()">
+<form class="payment-card" (ngSubmit)="update()">
 
-  <label>Invoice ID</label><br>
-  <input type="number" [(ngModel)]="invoiceId" name="invoiceId" required><br><br>
-  <label>Payment Status</label><br>
+  <label>Invoice ID</label>
+  <input type="number" [(ngModel)]="invoiceId" name="invoiceId" required>
+  <label>Payment Status</label>
   <select [(ngModel)]="status" name="status" required>
     <option value="PAID">PAID</option>
     <option value="UNPAID">UNPAID</option>
-  </select><br><br>
+  </select>
   <button type="submit">Update Payment</button>
 
 </form>
