@@ -15,6 +15,7 @@ import { WarehousesComponent } from './warehouses/warehouses.component';
 import { WarehousestockComponent } from './warehousestock/warehousestock.component';
 import { StockbyproductComponent } from './stockbyproduct/stockbyproduct.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { UpdatepaymentComponent } from './updatepayment/updatepayment.component';
 
 const routes: Routes = [
   {path:'register',component: RegisterComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'warehouses/:code',component:WarehousestockComponent},
   {path:'productstock/:id',component:StockbyproductComponent},
   {path:'invoice',component:InvoiceComponent},
+  {path:'updatepayment',component:UpdatepaymentComponent},
   { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
 
