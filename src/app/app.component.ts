@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   showAdminBoard = false;
   showWarehouseBoard = false;
+  showFinanceBoard=false;
   username?: string;
 
   constructor(
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit {
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showWarehouseBoard = this.roles.includes('ROLE_WAREHOUSE_MANAGER');
+      this.showFinanceBoard=this.roles.includes('ROLE_FINANCE_OFFICER');
       this.username = user.name || user.email;
     }
   }

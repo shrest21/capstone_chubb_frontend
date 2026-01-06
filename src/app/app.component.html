@@ -37,6 +37,12 @@
           <a routerLink="/warehouses" routerLinkActive="active" class="nav-link">Warehouses</a>
         </li>
       }
+      @if(showFinanceBoard)
+      {
+        <li class="nav-item">
+          <a routerLink="/invoice" routerLinkActive="active" class="nav-link">View Invoices</a>
+        </li>
+      }
       <li class="nav-item">
         <a routerLink="/cart" routerLinkActive="active" class="nav-link">Cart</a>
       </li>
