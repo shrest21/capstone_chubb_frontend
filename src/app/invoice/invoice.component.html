@@ -42,14 +42,14 @@
     <td>{{ inv.invoiceId }}</td>
     <td>₹ {{ inv.amount }}</td>
     </tr>
+    <tr>
+      <td><strong>Total Sales</strong></td>
+      <td><strong>₹ {{ todayTotal }}</strong></td>
+    </tr>
     </tbody>
   </table>
   <div *ngIf="todaysInvoices.length === 0">
     No sales today.
-  </div>
-  <div *ngIf="todaysInvoices.length > 0" class="total-box">
-    <strong>Total Sales Today:</strong>
-    <span>₹ {{ todayTotal }}</span>
   </div>
 </div>
     <div class="card report-right">
