@@ -1,1 +1,27 @@
-<p>invoice works!</p>
+<div class="invoice-container">
+  <h2>Invoices</h2>
+  <div *ngIf="invoices.length === 0">
+    No invoices generated.
+  </div>
+  <table *ngIf="invoices.length > 0">
+    <thead>
+      <tr>
+        <th>Invoice ID</th>
+        <th>Order ID</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Created Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let invoice of invoices">
+        <td>{{ invoice.invoiceId }}</td>
+        <td>{{ invoice.orderId }}</td>
+        <td>₹ {{ invoice.amount }}</td>
+        <td>{{ invoice.status }}</td>
+        <td>{{ invoice.createdAt | date:'dd MMM yyyy, hh:mm a' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
