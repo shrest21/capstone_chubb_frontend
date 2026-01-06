@@ -33,6 +33,7 @@ export class InvoiceComponent implements OnInit{
       next: (data) => {this.invoices = data;
         this.filterTodaysInvoices();
         this.renderMonthlyChart();
+        this.calculateTodayTotal();
       },
       error: (err) => {console.error(err);}
     });
