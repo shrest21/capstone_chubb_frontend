@@ -1,0 +1,44 @@
+.invoice-container {
+  padding: 20px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: orange;
+  text-align: left;
+}
+
+/* Report layout */
+.report-container {
+  display: flex;
+  gap: 30px;
+}
+
+.report-left {
+  width: 50%;
+}
+
+.report-right {
+  width: 50%;
+}
+
+/* Chart sizing */
+canvas {
+  width: 100% !important;
+  max-height: 350px;
+}
