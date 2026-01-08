@@ -69,6 +69,7 @@ export class OrderComponent implements OnInit {
       customerId: user.userId,
       customerName: this.name,
       address: this.address,
+      email:user.email,
       items: this.cartItems.map(item => ({
         productId: item.productId,
         quantity: item.quantity

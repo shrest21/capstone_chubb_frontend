@@ -1,1 +1,14 @@
-<p>orderstatus works!</p>
+<div class="container">
+  <h2>Order Status</h2>
+  <!-- Orders List -->
+  <ul *ngIf="orders.length > 0">
+    <li *ngFor="let order of orders">
+      <strong>Order ID:</strong> {{ order.orderId }} <br />
+      <strong>Status:</strong> {{ order.status }}
+    </li>
+  </ul>
+  <!-- No Orders -->
+  <p *ngIf="orders.length === 0">
+    No orders found.
+  </p>
+</div>
