@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { WarehousestockService } from '../_services/warehousestock.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StorageService } from '../_services/storage.service';
 
 @Component({
   selector: 'app-stockbyproduct',
@@ -13,8 +14,14 @@ import { ActivatedRoute } from '@angular/router';
 export class StockbyproductComponent implements OnInit{
   productId!: number;
   stockList: any[] = [];
-  constructor(private warehousestockService:WarehousestockService,private route:ActivatedRoute){}
+  constructor(private warehousestockService:WarehousestockService,private route:ActivatedRoute,private storageService:StorageService,private router:Router){}
   ngOnInit(): void {
+    const user=this.storageService.getUser();
+    if(user.role!="ROLE_WAREHOUSE_MANAGER")
+    {
+      alert("Pls login as warehouse manager");
+      this.router.navigate(['\products']);
+    }
     this.productId = Number(this.route.snapshot.paramMap.get('id'));
     this.showstock();
   }

@@ -17,6 +17,14 @@ export class LoginComponent {
   email='';
   password='';
   login(){
+    if (!this.email.includes('@') || !this.email.includes('.')) {
+      alert('Please enter a valid email');
+      return;
+    }
+    if (this.password.length < 5) {
+      alert('Password must be at least 5 characters long');
+      return;
+    }
     const payload={
       email:this.email,
       password:this.password
