@@ -1,14 +1,31 @@
 <div class="container">
   <h2>Order Status</h2>
-  <!-- Orders List -->
-  <ul *ngIf="orders.length > 0">
-    <li *ngFor="let order of orders">
-      <strong>Order ID:</strong> {{ order.orderId }} <br />
-      <strong>Status:</strong> {{ order.status }}
-    </li>
-  </ul>
-  <!-- No Orders -->
-  <p *ngIf="orders.length === 0">
-    No orders found.
-  </p>
+
+  <table *ngIf="orders.length > 0">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Current Status</th>
+        <th>Update Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.status }}</td>
+
+        <td>
+          <select [(ngModel)]="selectedStatus[order.orderId]">
+            <option value="" disabled>Select status</option>
+            <option *ngFor="let s of getStatus(order.status)" [value]="s">{{ s }}</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="updateStatus(order.orderId)">Update Status</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="orders.length === 0">No orders found.</p>
 </div>

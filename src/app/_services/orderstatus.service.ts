@@ -12,5 +12,7 @@ export class OrderstatusService {
   showorders():Observable<any>{
     return this.http.get(this.API_URL,{withCredentials:true});
   }
-  
+  update(payload:any,orderId:number){
+    return this.http.put(`${this.API_URL}/${orderId}/status`,payload,{withCredentials:true});
+  }
 }
